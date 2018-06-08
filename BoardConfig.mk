@@ -147,6 +147,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # RIL
 TARGET_RIL_VARIANT := caf
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
