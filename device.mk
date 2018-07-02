@@ -22,6 +22,11 @@ PRODUCT_AAPT_CONFIG := normal
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -125,7 +130,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsxv26.kl:system/usr/keylayout/synaptics_dsxv26.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
-    
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8953
