@@ -12,5 +12,8 @@ DEVICE_PATH := device/oppo/A57
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_A57_defconfig
 
+# Display
+TARGET_SCREEN_DENSITY := 280
+
 # Inherit the proprietary files
 -include vendor/oppo/A57/BoardConfigVendor.mk
