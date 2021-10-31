@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "android_kernel_oppo_r9s",
+    "target_path": "kernel/oppo/r9s"
+  },
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  }
+]
