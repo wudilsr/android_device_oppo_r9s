@@ -129,6 +129,9 @@ TARGET_KERNEL_CONFIG := r9s_defconfig
 TARGET_KERNEL_SOURCE := kernel/oppo/r9s
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
