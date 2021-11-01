@@ -33,8 +33,8 @@ $(call inherit-product, device/oppo/r9s/device.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_r9s
 PRODUCT_DEVICE := r9s
-PRODUCT_BRAND := oppo
-PRODUCT_MODEL := oppo R9s
+PRODUCT_BRAND := OPPO
+# PRODUCT_MODEL := oppo R9s
 PRODUCT_MANUFACTURER := OPPO
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
@@ -42,3 +42,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-oppo
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=OPPO/R9s/R9s:6.0.1/MMB29M/1390465867:user/release-keys \
     PRIVATE_BUILD_DESC="msm8953_64-user 6.0.1 MMB29M eng.root.20170112.012708 dev-keys"
+
+BOARD_VENDOR := oppo
