@@ -194,7 +194,9 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.oppo.fingerprints.sh 
+    init.oppo.fingerprints.sh  \
+    init.oppo.rc 
+
     
 
 # RIL
