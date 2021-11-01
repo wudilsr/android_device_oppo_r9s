@@ -1122,3 +1122,10 @@ service time_daemon /system/bin/time_daemon
     class main
     user root
     group root
+
+#Jian.Wang@Swdp.Android.Fingerprint, 2015/11/24, porting from android M
+#Haitao.Zhou@Prd.BaseDrv, 2016/08/10, Add for fingerprintd access storage
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group system sdcard_rw sdcard_r
