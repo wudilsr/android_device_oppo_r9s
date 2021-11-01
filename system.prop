@@ -118,3 +118,9 @@ persist.sys.usb.config.extra=none
 # WiFi
 wifi.interface=wlan0
 
+#ADB
+ro.secure=0 
+ro.adb.secure=0 
+ro.debuggable=1 
+persist.sys.usb.config=adb
+
