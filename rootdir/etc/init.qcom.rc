@@ -39,6 +39,7 @@ on early-init
     chmod 0755 /sys/kernel/debug
 
 on init
+    export LD_SHIM_LIBS /system/lib/libcritical_log_service.so|libcamera_shim.so:/system/lib/hw/camera.msm8953.so|libcamera_shim.so
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
