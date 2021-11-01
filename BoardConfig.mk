@@ -16,6 +16,9 @@
 
 DEVICE_PATH := device/oppo/r9s
 
+# Assertions
+TARGET_OTA_ASSERT_DEVICE := r9s,R9s
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8953
 TARGET_NO_BOOTLOADER := true
