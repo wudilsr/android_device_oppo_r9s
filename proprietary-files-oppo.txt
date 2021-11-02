@@ -129,6 +129,7 @@ vendor/lib/libois_lc898122.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libqomx_jpegenc.so
+vendor/lib/libVDHDRAPI.so
 
 # Camera actuators
 vendor/lib/libactuator_dw9718s.so
