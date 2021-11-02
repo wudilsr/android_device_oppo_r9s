@@ -1,6 +1,5 @@
 #
-# system.prop for tb8703
-#
+# system.prop for r9s
 
 # Audio
 af.fast_track_multiplier=2
