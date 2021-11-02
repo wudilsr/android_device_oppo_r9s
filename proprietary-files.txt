@@ -8,9 +8,6 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# Amplifier
-etc/firmware/tas2555_uCDSP.bin
-
 # Audio
 vendor/lib/hw/sound_trigger.primary.msm8953.so
 vendor/lib/libacdb-fts.so
@@ -133,9 +130,7 @@ vendor/lib64/hw/gatekeeper.msm8953.so
 
 # GPS
 bin/loc_launcher
-bin/lowi-server
 etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.vzw_library.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
 -framework/com.qti.location.sdk.jar
@@ -165,7 +160,6 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxt_native.so
 vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_ulp_adaptor.so
 
 # Graphics
 vendor/lib/egl/eglSubDriverAndroid.so
@@ -214,7 +208,6 @@ vendor/lib64/libllvm-qgl.so
 vendor/lib64/libmmQSM.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/libuiblur.so
 
 # Graphics firmware
 etc/firmware/a506_zap.b00
@@ -355,7 +348,6 @@ vendor/lib64/libsmemlog.so
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd
 bin/port-bridge
-bin/qmi_motext_hook
 bin/radish
 bin/rmt_storage
 bin/tftp_server
@@ -364,9 +356,6 @@ etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
 -framework/qti-telephony-common.jar|3cea332c3cc179fae5691763c8e55027cc76ffc8
 -framework/qcrilhook.jar
-lib64/libmotext_inf.so
-lib64/libqmimotext.so
-lib64/libtzssm.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
 vendor/lib/libmdmdetect.so
@@ -388,7 +377,6 @@ vendor/qcril.db
 
 # Sensors
 bin/sensors.qcom
-lib64/sensors.oem.so
 vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -411,8 +399,6 @@ bin/time_daemon
 vendor/lib64/libTimeService.so
 
 # Widevine
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/libwvdrm_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # WiFi
