@@ -213,6 +213,33 @@ on boot
     chown root system /sys/kernel/dload/emmc_dload
     chmod 0660 /sys/kernel/dload/emmc_dload
 
+    #ifdef OPPO
+    #JianRong.Zheng@Swdp.Android.Power.Breathing, 2015/12/14 Add for oppo breath light
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/device/grpfreq
+    chown system system /sys/class/leds/white/device/grppwm
+    chown system system /sys/class/leds/white/device/blink
+    #endif OPPO
+
+    #ifdef OPPO
+    #LiPing@SWDP.MultiMedia, 2017/02/14  Add for add LCD permission
+    chown system system /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0660 /sys/devices/virtual/graphics/fb0/hbm
+    chown system system /sys/devices/virtual/graphics/fb0/lcdoff
+    chown system system /sys/devices/virtual/graphics/fb0/closebl
+    #endif OPPO
+
+    #ifdef OPPO
+    #RunSheng.Pei@Swdp.Android.Power.Cabc, 2015/05/26, add for cabc, begin:
+    chown system system /sys/devices/virtual/graphics/fb0/cabc
+    #endif OPPO
+
+    #ifdef OPPO
+    #LiPing@SWDP.MultiMedia, 2017/03/02, add for lcd lbr node permission
+    chown system system /sys/devices/virtual/graphics/fb0/lbr
+    #endif OPPO
+
+
 # msm specific files that need to be created on /data
 on post-fs-data
     #Create directories for Fingerprint
@@ -408,6 +435,10 @@ service qcomsysd /system/bin/qcom-system-daemon
     class main
     user root
     group root qcom_diag
+#ifdef OPPO
+#JianRong.Zheng@Swdp.Android.Performance.Power, 2016/07/25, Add for remove qcomsysd, reduce current while screen on. related to case id 02554562
+    disabled
+#endif OPPO   
 
 service ssr_setup /system/bin/ssr_setup
     oneshot

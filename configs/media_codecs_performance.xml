@@ -78,8 +78,16 @@
             <Limit name="measured-frame-rate-352x288" range="434-434" />
             <Limit name="measured-frame-rate-720x480" range="338-338" />
             <Limit name="measured-frame-rate-1280x720" range="241-241" />
-            <Limit name="measured-frame-rate-1920x1088" range="50-300" />
-            <Limit name="measured-frame-rate-3840x2160" range="10-50" />
+        <!-- #ifndef VENDOR_EDIT -->
+        <!-- Xiaopeng.Hu@MultiMedia.MediaServer.Cts, 2017/03/09, Modify for testHevcOther0Perf1920x1080/testHevcOther0Perf3840x2160 cts -->
+        <!--
+            <Limit name="measured-frame-rate-1920x1088" range="50-60" />
+            <Limit name="measured-frame-rate-3840x2160" range="10-13" />
+        -->
+        <!-- #else  //VENDOR_EDIT -->
+            <Limit name="measured-frame-rate-1920x1088" range="180-180" />
+            <Limit name="measured-frame-rate-3840x2160" range="35-35" />
+        <!-- #endif //VENDOR_EDIT -->
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.h263" type="video/3gpp" update="true">
             <Limit name="measured-frame-rate-176x144" range="400-400" />
@@ -126,6 +134,10 @@
             <Limit name="measured-frame-rate-1920x1080" range="14-18" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
+        <!-- #ifdef VENDOR_EDIT -->
+        <!-- Xiaopeng.Hu@MultiMedia.MediaServer.Cts, 2017/03/21, Add for  testVp9Goog0Perf0320x0180 Cts -->
+            <Limit name="measured-frame-rate-320x180" range="600-600" />
+        <!-- #endif //VENDOR_EDIT -->
             <Limit name="measured-frame-rate-320x240" range="604-604" />
             <Limit name="measured-frame-rate-640x360" range="180-185" />
             <Limit name="measured-frame-rate-1280x720" range="88-92" />
@@ -133,7 +145,14 @@
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.decoder" update="true">
             <Type name="video/mp4v-es">
+        <!-- #ifndef VENDOR_EDIT -->
+        <!-- Xiaopeng.Hu@MultiMedia.MediaServer.Cts, 2017/03/10, Modify for testMpeg4Goog0Perf0176x0144 Cts -->
+        <!--
                 <Limit name="measured-frame-rate-176x144" range="430-450" />
+        -->
+        <!-- #else  //VENDOR_EDIT -->
+                <Limit name="measured-frame-rate-176x144" range="200-200" />
+        <!-- #endif //VENDOR_EDIT -->
             </Type>
          </MediaCodec>
     </Decoders>
