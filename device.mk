@@ -70,7 +70,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
-    libcamera_shim
+    libcamera_shim \
+    libshims_cameraservice
 
 # Display
 PRODUCT_PACKAGES += \
