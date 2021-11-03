@@ -25,7 +25,6 @@ etc/acdbdata/16017/Handset_cal.acdb
 etc/acdbdata/16017/Hdmi_cal.acdb
 etc/acdbdata/16017/Headset_cal.acdb
 etc/acdbdata/16017/Speaker_cal.acdb
-etc/acdbdata/16017/workspaceFile.qwsp
 etc/acdbdata/16027/Bluetooth_cal.acdb
 etc/acdbdata/16027/General_cal.acdb
 etc/acdbdata/16027/Global_cal.acdb
@@ -33,7 +32,6 @@ etc/acdbdata/16027/Handset_cal.acdb
 etc/acdbdata/16027/Hdmi_cal.acdb
 etc/acdbdata/16027/Headset_cal.acdb
 etc/acdbdata/16027/Speaker_cal.acdb
-etc/acdbdata/16027/workspaceFile.qwsp
 
 # Camera
 bin/mm-qcamera-daemon
