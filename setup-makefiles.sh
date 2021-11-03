@@ -49,7 +49,7 @@ write_makefiles "$MY_DIR"/proprietary-files.txt
 write_makefiles "$MY_DIR"/proprietary-files-oppo.txt
 
 #twp blobs
-write_makefiles "$MY_DIR"/proprietary-files-twrp.txt
+#write_makefiles "$MY_DIR"/proprietary-files-twrp.txt
 
 # Blobs for TWRP data decryption
 cat << EOF >> "$BOARDMK"
