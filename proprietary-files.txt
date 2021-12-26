@@ -35,5 +35,3 @@ vendor/lib64/libqtikeymaster4.so|de1b142584a8758c5f806f035cb877037f28da11
 # Keystore - from UL-ASUS_X00P-WW-AOSP-17.00.2003.23-user
 vendor/lib/hw/keystore.msm8937.so|a40d5dfd762c1a053ca1903a6fdf0d80a94ca16f
 vendor/lib64/hw/keystore.msm8937.so|d1fe5f528f218fbb90917ce061fad64fba3f2f16
-vendor/lib64/libkeystore-engine-wifi-hidl.so|8cabd4b4c77c318b1c76b57e7b9495eb95435525
-vendor/lib64/libkeystore-wifi-hidl.so|8f3729131cd6911318f20feab4b0ffa68eb350d8
