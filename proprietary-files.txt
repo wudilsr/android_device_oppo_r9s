@@ -9,6 +9,31 @@ etc/acdbdata/16061/Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 etc/acdbdata/16061/Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 etc/acdbdata/16061/Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
+# Fingerprint - FPC
+lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.msm8937.so
+lib64/libalipay_factory.so:vendor/lib64/libalipay_factory.so
+lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
+
+# Fingerprint - Alipay firmware
+etc/firmware/alipay.b00:vendor/firmware/alipay.b00
+etc/firmware/alipay.b01:vendor/firmware/alipay.b01
+etc/firmware/alipay.b02:vendor/firmware/alipay.b02
+etc/firmware/alipay.b03:vendor/firmware/alipay.b03
+etc/firmware/alipay.b04:vendor/firmware/alipay.b04
+etc/firmware/alipay.b05:vendor/firmware/alipay.b05
+etc/firmware/alipay.b06:vendor/firmware/alipay.b06
+etc/firmware/alipay.mdt:vendor/firmware/alipay.mdt
+
+# Fingerprint - FPC firmware
+etc/firmware/b_fp.b00:vendor/firmware/b_fp.b00
+etc/firmware/b_fp.b01:vendor/firmware/b_fp.b01
+etc/firmware/b_fp.b02:vendor/firmware/b_fp.b02
+etc/firmware/b_fp.b03:vendor/firmware/b_fp.b03
+etc/firmware/b_fp.b04:vendor/firmware/b_fp.b04
+etc/firmware/b_fp.b05:vendor/firmware/b_fp.b05
+etc/firmware/b_fp.b06:vendor/firmware/b_fp.b06
+etc/firmware/b_fp.mdt:vendor/firmware/b_fp.mdt
+
 # Gatekeeper - from UL-ASUS_X00P-WW-AOSP-17.00.2003.23-user
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|bea6d682011b465a08b9085f7b5e69b965743eee
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
