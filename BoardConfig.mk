@@ -15,5 +15,9 @@ TARGET_KERNEL_CONFIG := lineageos_A57_defconfig
 # Display
 TARGET_SCREEN_DENSITY := 280
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib64/hw/fingerprint.msm8937.so|libshims_binder.so
+
 # Inherit the proprietary files
 -include vendor/oppo/A57/BoardConfigVendor.mk

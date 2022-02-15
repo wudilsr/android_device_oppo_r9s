@@ -33,3 +33,11 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
+
+# Rootdir
+PRODUCT_PACKAGES += \
+    fpc1020.rc
+
+# Shims
+PRODUCT_PACKAGES += \
+    libshims_binder
