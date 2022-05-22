@@ -117,7 +117,7 @@
     <!--Jianfeng.Qiu@Swdp.Multimedia, 2016/08/10, Add for default config-->
     <ctl name="Ext_SPK_Switch" value="DISABLE" />
     <ctl name="Ext_HP_Switch" value="DISABLE" />
-    <ctl name="Ext Spk Switch" value="Off" />
+    <ctl name="Oppo Pa Control" value="Off" />
     <!--#endif /* VENDOR_EDIT */-->
 
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="0" />
@@ -1022,7 +1022,8 @@
         <ctl name="MI2S_RX Channels" value="One" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="HPHL" value="Switch" />
-        <ctl name="Ext Spk Switch" value="On" />
+        <ctl name="Ext_SPK_Switch" value="ENABLE" />
+        <ctl name="Oppo Pa Control" value="On" />
     </path>
     <!--#endif /* VENDOR_EDIT */-->
 
@@ -1117,6 +1118,7 @@
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+        <ctl name="Ext_HP_Switch" value="ENABLE" />
     </path>
     <!--#endif /* VENDOR_EDIT */-->
 
@@ -1196,7 +1198,9 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
-        <ctl name="Ext Spk Switch" value="On" />
+        <ctl name="Ext_SPK_Switch" value="ENABLE" />
+        <ctl name="Ext_HP_Switch" value="ENABLE" />
+        <ctl name="Oppo Pa Control" value="On" />
     </path>
     <!--#endif /* VENDOR_EDIT */-->
 
