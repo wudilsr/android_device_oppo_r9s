@@ -18,29 +18,27 @@
 TARGET_SCREEN_HEIGHT := 1080
 TARGET_SCREEN_WIDTH := 1920
 
-# Inherit 64-bit configs
+# Inherit framework first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
-# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from r9s device
+$(call inherit-product, device/oppo/r9s/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Inherit device configuration
-$(call inherit-product, device/oppo/r9s/device.mk)
-
-# Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_r9s
 PRODUCT_DEVICE := r9s
 PRODUCT_BRAND := OPPO
-# PRODUCT_MODEL := oppo R9s
+PRODUCT_MODEL := R9s
 PRODUCT_MANUFACTURER := OPPO
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=OPPO/R9s/R9s:6.0.1/MMB29M/1390465867:user/release-keys \
-    PRIVATE_BUILD_DESC="msm8953_64-user 6.0.1 MMB29M eng.root.20170112.012708 dev-keys"
+    BUILD_FINGERPRINT=OPPO/R9s/R9s:7.1.1/NMF26F/1499071148:user/release-keys \
+    PRIVATE_BUILD_DESC="msm8953_64-user 7.1.1 NMF26F eng.root.20190413.183814 release-keys" \
+    TARGET_DEVICE="R9s"
 
 BOARD_VENDOR := oppo
