@@ -16,6 +16,9 @@
 
 DEVICE_PATH := device/oppo/r9s
 
+# inherit from Oppo common
+-include device/oppo/common/BoardConfigCommon.mk
+
 # Assertions
 TARGET_OTA_ASSERT_DEVICE := r9s,R9s
 
