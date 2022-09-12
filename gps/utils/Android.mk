@@ -43,6 +43,7 @@ LOCAL_MODULE := libgps.utils
 LOCAL_MODULE_PATH_32 := $(TARGET_OUT_VENDOR)/lib
 LOCAL_MODULE_PATH_64 := $(TARGET_OUT_VENDOR)/lib64
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 
 LOCAL_CFLAGS += $(GNSS_CFLAGS)
@@ -52,6 +53,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libgps.utils_headers
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_HEADER_LIBRARY)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
