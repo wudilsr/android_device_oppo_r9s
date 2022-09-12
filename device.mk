@@ -21,9 +21,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_CONFIG := normal
 
-# Dalvik heap and hwui memory limits
+# Dalvik
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
