@@ -212,7 +212,7 @@ PRODUCT_PACKAGES += \
 
 # IRSC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -283,7 +283,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.bt.sh \
     init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
+    init.qcom.early_boot.sh \/dev/nvme0n1p4 on /media/wudilsr/Data type fuseblk (ro,nosuid,nodev,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096,uhelper=udisks2)
+
     init.qcom.post_boot.sh \
     init.qcom.rc \
     init.qcom.sensors.sh \
