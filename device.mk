@@ -163,6 +163,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# Factory reset protection
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
