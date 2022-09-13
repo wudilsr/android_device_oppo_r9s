@@ -14,20 +14,29 @@
 # limitations under the License.
 #
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
-
-# Screen density
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-PRODUCT_AAPT_CONFIG := normal
-
-# Dalvik
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+LOCAL_PATH := device/oppo/r9s
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
+    
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+
+# Density
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_CONFIG := normal
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=480
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -127,6 +136,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
 
+# MSM IPC Router configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
@@ -208,10 +221,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
-
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # IRQ
 PRODUCT_COPY_FILES += \

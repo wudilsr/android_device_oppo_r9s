@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1080
-TARGET_SCREEN_WIDTH := 1920
-
 # Inherit framework first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -41,5 +37,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="R9s"
 
 BUILD_FINGERPRINT=OPPO/R9s/R9s:7.1.1/NMF26F/1499071148:user/release-keys
-
-BOARD_VENDOR := oppo

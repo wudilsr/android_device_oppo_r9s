@@ -16,5 +16,6 @@
 
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)/twrp
 TW_INCLUDE_CRYPTO := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_CRYPTO_USE_SBIN_VOLD := true
+TW_INPUT_BLACKLIST := "lis3dh-accel\x0ahbtp_vm"
 TW_THEME := portrait_hdpi

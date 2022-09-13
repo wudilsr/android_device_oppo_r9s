@@ -14,17 +14,13 @@
 # limitations under the License.
 #
 
+
+BOARD_VENDOR := oppo
+
 DEVICE_PATH := device/oppo/r9s
 
 # inherit from Oppo common
 -include device/oppo/common/BoardConfigCommon.mk
-
-# Assertions
-TARGET_OTA_ASSERT_DEVICE := r9s,R9s
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8953
-TARGET_NO_BOOTLOADER := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
@@ -41,6 +37,30 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+
+
+# Assertions
+TARGET_OTA_ASSERT_DEVICE := r9s,R9s
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := msm8953
+TARGET_NO_BOOTLOADER := true
+
+# Kernel
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlyprintk androidboot.selinux=permissive ramoops.mem_address=0x8ff00000 ramoops.mem_size=0x100000 ramoops.record_size=0x20000 ramoops.dump_oops=0
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_OFFSET = 0x80000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET := 0x01000000
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CONFIG := r9s_defconfig
+TARGET_KERNEL_SOURCE := kernel/oppo/msm8953
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
@@ -82,9 +102,6 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -114,27 +131,22 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TARGET_LEGACY_HW_DISK_ENCRYPTION := true
 
-# Headers
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 
-# Kernel
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlyprintk androidboot.selinux=permissive ramoops.mem_address=0x8ff00000 ramoops.mem_size=0x100000 ramoops.record_size=0x20000 ramoops.dump_oops=0
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_OFFSET = 0x80000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := r9s_defconfig
-TARGET_KERNEL_SOURCE := kernel/oppo/msm8953
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
+
+# Init
+#TARGET_INIT_VENDOR_LIB := libinit_r9s
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_r9s
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -144,11 +156,11 @@ BOARD_HARDWARE_CLASS += \
     $(DEVICE_PATH)/lineagehw \
     hardware/lineage/lineagehw
 
+# Malloc
+MALLOC_SVELTE := true
+
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-
-# Keymaster
-TARGET_PROVIDES_KEYMASTER := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -161,13 +173,15 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 #TARGET_USERIMAGES_USE_F2FS := true
 
-# RIL
-TARGET_RIL_VARIANT := caf
+# Power
+TARGET_POWERHAL_VARIANT := qcom
 
-# Init
-#TARGET_INIT_VENDOR_LIB := libinit_r9s
-#TARGET_RECOVERY_DEVICE_MODULES := libinit_r9s
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QC_TIME_SERVICES := true
+
+# QCRIL
+TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
@@ -175,6 +189,9 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+ifeq ($(WITH_TWRP),true)
+include $(DEVICE_PATH)/twrp.mk
+endif
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -185,20 +202,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/lib/libizat_core.so|libshims_get_process_name.so
 
-# Qualcomm support
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QC_TIME_SERVICES := true
-
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-
-# TWRP
-ifeq ($(WITH_TWRP),true)
-include $(DEVICE_PATH)/twrp.mk
-endif
 
 # WiFi
 BOARD_HAS_QCOM_WLAN := true
@@ -208,6 +213,8 @@ BOARD_WLAN_DEVICE := qcwcn
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 PRODUCT_VENDOR_MOVE_ENABLED := true
+TARGET_USES_QCOM_WCNSS_QMI := true
+TARGET_PROVIDES_WCNSS_QMI := true
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
