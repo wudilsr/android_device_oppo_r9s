@@ -189,6 +189,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # TWRP
 ifeq ($(WITH_TWRP),true)
 include $(DEVICE_PATH)/twrp.mk
