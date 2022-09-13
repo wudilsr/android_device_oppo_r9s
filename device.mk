@@ -285,17 +285,23 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     ueventd.qcom.rc \
     init.class_main.sh \
-    init.target.rc \
-    init.qcom.bt.sh \
+    init.mdm.sh \
+    init.oppo.fingerprints.rc \
+    init.oppo.fingerprints.sh  \
+    init.oppo.rc \
+    init.oppo.usb.rc \
     init.qcom.class_core.sh \
+    init.qcom.coex.sh \
     init.qcom.early_boot.sh \
+    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
+    init.qcom.sdio.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.rc \
-    init.oppo.fingerprints.sh  \
-    init.oppo.rc 
+    init.qcom.wifi.sh \
+    init.target.rc 
     
 # RIL
 PRODUCT_PACKAGES += \
