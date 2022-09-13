@@ -18,10 +18,9 @@
 
 set -e
 
-DEVICE=r9s
-VENDOR=oppo
-
-INITIAL_COPYRIGHT_YEAR=2017
+export VENDOR=oppo
+export DEVICE=r9s
+INITIAL_COPYRIGHT_YEAR=2021
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -36,20 +35,24 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper
+# Initialize the helper for common device
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
+
+# Copyright headers and common guards
+    write_headers "r9s"
+
+write_makefiles "$MY_DIR"/proprietary-files.txt
+
+write_footers
+
+# Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 
 # Copyright headers and guards
 write_headers
 
-# Main Qcom blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
-
-#oppo blobs
 write_makefiles "$MY_DIR"/proprietary-files-oppo.txt
-
-#twp blobs
-#write_makefiles "$MY_DIR"/proprietary-files-twrp.txt
 
 # Blobs for TWRP data decryption
 cat << EOF >> "$BOARDMK"
