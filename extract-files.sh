@@ -22,8 +22,8 @@ fi
 
 set -e
 
-export DEVICE=A57
-export DEVICE_COMMON=msm8937-common
+export DEVICE=r9s
+export DEVICE_COMMON=msm8953-common
 export VENDOR=oppo
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"

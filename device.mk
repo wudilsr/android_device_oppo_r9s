@@ -4,13 +4,13 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/oppo/A57
+DEVICE_PATH := device/oppo/r9s
 
-# Inherit from msm8937-common
-$(call inherit-product, device/oppo/msm8937-common/msm8937.mk)
+# Inherit from msm8953-common
+$(call inherit-product, device/oppo/msm8953-common/msm8953.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oppo/A57/A57-vendor.mk)
+$(call inherit-product, vendor/oppo/r9s/r9s-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -19,15 +19,15 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
-    device/oppo/A57
+    device/oppo/r9s
 
 # Screen density
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_COPY_FILES += \
